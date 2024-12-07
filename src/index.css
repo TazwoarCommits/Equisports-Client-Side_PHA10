@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+a.active {
+    background: rgb(42, 142, 224);
+    color: aliceblue;
+    font-style: italic;
+    padding: 5px;
+    padding-top: 3px;
+    border-radius: 8px;
+}
+
+.img-container{
+    position: relative;
+}
+
+
+.img-container:hover p {
+  display: block ; 
+}
