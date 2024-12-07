@@ -1,12 +1,13 @@
 import { useLoaderData } from "react-router-dom";
 import { IoMdStar } from "react-icons/io";
 
+
 const Details = () => {
     const equipment = useLoaderData();
     const { name, photo, price, rating, category, description, availability, customization, processTime } = equipment;
-    console.log(equipment);
+    
     return (
-        <div className="mt-12 md:mt-24 hero bg-base-200 md:w-10/12 mx-auto">
+        <div className="mt-12 md:mt-24  md:w-10/12 mx-auto hero bg-cyan-800/80 text-base-100 md:rounded-3xl">
             <div className="hero-content flex-col lg:flex-row items-center">
                 <img
                     src={photo}

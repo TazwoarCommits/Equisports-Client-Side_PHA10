@@ -1,14 +1,16 @@
 import PropTypes from "prop-types";
 import { IoMdStar } from "react-icons/io";
+import { Link } from "react-router-dom";
+import { CiSquareMore } from "react-icons/ci";
 
 const EquipmentsTable = ({ equipment, idx }) => {
-    const { photo, name, category, price, rating } = equipment;
+    const { photo, name, category, price, rating , _id} = equipment;
 
     return (
-        <tbody className="border-2">
+        <tbody className="border-2 border-cyan-800/80">
             <tr>
                 <td>
-                    {idx + 1}
+                    {idx + 1}.
                 </td>
                 <td>
                     <div className="flex items-center gap-3">
@@ -33,7 +35,7 @@ const EquipmentsTable = ({ equipment, idx }) => {
                     </div>
                 </td>
                 <th>
-                    <button className="btn btn-ghost btn-xs">details</button>
+                    <Link to={`/details/${_id}`}><p className="text-lg text-cyan-800 font-bold"><CiSquareMore /></p></Link>
                 </th>
             </tr>
         </tbody>
