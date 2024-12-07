@@ -26,7 +26,7 @@ const Home = () => {
                 <div>
                     <h3 className="text-3xl font-semibold text-cyan-800">Buy Now </h3>
                 </div>
-                <div className="grid md:grid-cols-2 justify-items-center  gap-4 w-11/12 mx-auto">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 justify-items-center space-y-4 gap-4 w-11/12 md:w-10/12 mx-auto">
                     {
                         equipments.map(equipment => <HomeCard key={equipment._id} equipment={equipment}></HomeCard>)
                     }

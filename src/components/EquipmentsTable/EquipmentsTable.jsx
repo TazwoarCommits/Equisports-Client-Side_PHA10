@@ -10,7 +10,7 @@ const EquipmentsTable = ({ equipment, idx }) => {
         <tbody className="border-2 border-cyan-800/80">
             <tr>
                 <td>
-                    {idx + 1}.
+                  <p className="font-bold">{idx + 1}.</p>
                 </td>
                 <td>
                     <div className="flex items-center gap-3">
@@ -21,7 +21,7 @@ const EquipmentsTable = ({ equipment, idx }) => {
                             </div>
                         </div>
                         <div>
-                            <div className="font-bold">{name}</div>
+                            <div className="font-bold text-cyan-800">{name}</div>
                         </div>
                     </div>
                 </td>
