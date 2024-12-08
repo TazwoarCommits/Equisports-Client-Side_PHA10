@@ -5,8 +5,8 @@ import HomeCard from "../components/HomeCard/HomeCard";
 
 const MyEquipments = () => {
     const {user} = useContext(AuthContext)
-    const allequipments = useLoaderData();
-    const myAddedEquipments = allequipments.filter(equipment => equipment.author?.userMail === user.email) ; 
+    const allEquipments = useLoaderData();
+    const myAddedEquipments = allEquipments.filter(equipment => equipment.author?.userMail === user.email) ; 
 
     return (
         <div>
@@ -15,7 +15,7 @@ const MyEquipments = () => {
             {
                 myAddedEquipments.length == 0 ? "You Haven't added Anything Yet "
                  : 
-               <div className="mt-12 md:mt-24 grid grid-cols-1 md:grid-cols-2">
+               <div className="md:w-9/12 mx-auto mt-12 md:mt-24 grid grid-cols-1 md:grid-cols-2">
                    {
                     myAddedEquipments.map( equipment => <HomeCard key={equipment._id} equipment={equipment}></HomeCard>)
                    }
