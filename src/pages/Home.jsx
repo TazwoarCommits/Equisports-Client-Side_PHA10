@@ -8,7 +8,8 @@ import Banner from "../components/Banner/Banner";
 const Home = () => {
     const { loading } = useContext(AuthContext)
     const equipments = useLoaderData();
-    const homEquipments = equipments.slice(0, 9)
+    const homEquipments = equipments.slice(0, 9) ;
+    console.log(import.meta.env.VITE_A)
 
     if (loading) {
         return (
@@ -19,6 +20,7 @@ const Home = () => {
                 <span className="loading loading-bars loading-lg"></span>
             </div>
         );
+    
 
     }
     return (
