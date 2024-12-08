@@ -1,6 +1,9 @@
+import { useContext } from 'react';
 import Swal from 'sweetalert2'
+import { AuthContext } from '../Providers/AuthProvider';
 
 const AddEquipment = () => {
+    const {user} = useContext(AuthContext) ;
     const handleSubmit = e => {
         e.preventDefault();
         const form = new FormData(e.target);
@@ -22,9 +25,14 @@ const AddEquipment = () => {
             processTime,
             availability,
             photo,
-            description
+            description,
+            author : {
+                userMail : user.email,
+                userName : user.displayName
+            }
         }
          
+        console.log(equipment);
         fetch("http://localhost:5000/equipments" ,{
             method : "POST" ,
             headers : {
