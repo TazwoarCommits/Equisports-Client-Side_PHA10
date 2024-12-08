@@ -1,47 +1,14 @@
 import PropTypes from "prop-types";
-import { CiEdit } from "react-icons/ci";
-import { MdDelete } from "react-icons/md";
 import { CiSquareMore } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import { IoMdStar } from "react-icons/io";
-import Swal from 'sweetalert2'
 
 
 const HomeCard = ({ equipment }) => {
 
     const { photo, name, price, rating, availability, _id , customization } = equipment;
 
-    const handleDelete = id => {
-        console.log(id);
-        Swal.fire({
-            title: "Are you sure?",
-            text: "You won't be able to revert this!",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, delete it!"
-        }).then((result) => {
-            if (result.isConfirmed) {
-                //  
-
-                fetch(`http://localhost:5000/equipments/${id}`, {
-                    method: "DELETE"
-                })
-                    .then(res => res.json())
-                    .then(data => {
-                        console.log(data);
-                        if (data.deletedCount > 0) {
-                            Swal.fire({
-                                title: "Deleted!",
-                                text: "Your file has been deleted.",
-                                icon: "success"
-                            });
-                        }
-                    })
-            }
-        });
-    }
+  
 
     return (
         <div className="card card-compact bg-base-100 w-80 lg:w-96 mx-auto shadow-xl">
@@ -62,8 +29,6 @@ const HomeCard = ({ equipment }) => {
                 <p><span className="font-semibold">Customization : </span> {customization}</p>
                 <div className="card-actions mt-2">
                     <div className="flex gap-8 mb-4">
-                        <Link to={`/updateProduct/${_id}`}><p className="text-2xl font-bold"><CiEdit /></p></Link>
-                        <p onClick={() => handleDelete(_id)} className="text-2xl font-bold"><MdDelete /></p>
                         <Link to={`/details/${_id}`}><p className="text-2xl font-bold"><CiSquareMore /></p></Link>
                     </div>
                 </div>
@@ -73,7 +38,9 @@ const HomeCard = ({ equipment }) => {
 };
 
 HomeCard.propTypes = {
-    equipment: PropTypes.object
+    equipment: PropTypes.object,
+    equipments : PropTypes.object ,
+    setEquipments : PropTypes.func
 }
 
 export default HomeCard;

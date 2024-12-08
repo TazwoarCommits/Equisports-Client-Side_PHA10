@@ -52,6 +52,8 @@ const AddEquipment = () => {
               })
           }
         })
+
+        e.target.reset();
     }
 
     return (

@@ -2,14 +2,16 @@ import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { FaGoogle } from "react-icons/fa";
 import { GoogleAuthProvider } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 const GoogleLogin = () => {
-
+    
     const {googleLogin} = useContext(AuthContext)
-
+    const navigate = useNavigate()
     const handleGoogleLogin = () => {
         const provider = new GoogleAuthProvider ;
         googleLogin(provider) ;
+        navigate("/") ;
     }
 
     return (

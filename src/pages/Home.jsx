@@ -1,16 +1,15 @@
 import { Link, useLoaderData } from "react-router-dom";
 import HomeCard from "../components/HomeCard/HomeCard";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 import Banner from "../components/Banner/Banner";
 
 
 const Home = () => {
     const { loading } = useContext(AuthContext)
-    const equipments = useLoaderData();
-    const homEquipments = equipments.slice(0, 9) ;
-    console.log(import.meta.env.VITE_A)
-
+    const loadedEquipments = useLoaderData();
+    const [equipments, setEquipments] = useState(loadedEquipments);
+    const homEquipments = equipments.slice(0, 9);
     if (loading) {
         return (
 
@@ -20,7 +19,7 @@ const Home = () => {
                 <span className="loading loading-bars loading-lg"></span>
             </div>
         );
-    
+
 
     }
     return (
@@ -36,7 +35,11 @@ const Home = () => {
                 </div>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 justify-items-center space-y-4 gap-4 w-11/12 md:w-10/12 mx-auto">
                     {
-                        homEquipments.map(equipment => <HomeCard key={equipment._id} equipment={equipment}></HomeCard>)
+                        homEquipments.map(equipment => <HomeCard key={equipment._id}
+                            equipment={equipment}
+                            equipments={equipments}
+                            setEquipments={setEquipments}
+                            ></HomeCard>)
                     }
                 </div>
                 <div className="w-10/12 mx-auto mt-8">

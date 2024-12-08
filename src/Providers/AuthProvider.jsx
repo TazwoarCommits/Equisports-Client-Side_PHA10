@@ -19,7 +19,7 @@ const AuthProvider = ({ children }) => {
             .then(res => console.log(res))
             .catch(err => {
                 toast.error(err.message)
-            })
+            })         
     }
 
     // <<------------- Create new User ---------------->> 
