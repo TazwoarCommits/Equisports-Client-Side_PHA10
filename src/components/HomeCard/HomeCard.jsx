@@ -11,7 +11,7 @@ const HomeCard = ({ equipment }) => {
   
 
     return (
-        <div className="card card-compact bg-base-100 w-80 lg:w-96 mx-auto shadow-xl">
+        <div className="font-poppins card card-compact bg-base-100 w-80 lg:w-96 mx-auto shadow-xl">
             <figure>
                 <img className="w-11/12 mx-auto rounded-2xl h-80"
                     src={photo} />

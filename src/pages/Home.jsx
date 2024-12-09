@@ -3,13 +3,23 @@ import HomeCard from "../components/HomeCard/HomeCard";
 import { useContext, useState } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 import Banner from "../components/Banner/Banner";
-
+import Swal from "sweetalert2";
 
 const Home = () => {
     const { loading } = useContext(AuthContext)
     const loadedEquipments = useLoaderData();
     const [equipments, setEquipments] = useState(loadedEquipments);
     const homEquipments = equipments.slice(0, 9);
+    const uniqueCategories = [...new Set(equipments.map(equipment => equipment.category))];
+
+    const handleCategory = () => {
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Under Maintenance",
+          });
+    }
+
     if (loading) {
         return (
 
@@ -39,11 +49,25 @@ const Home = () => {
                             equipment={equipment}
                             equipments={equipments}
                             setEquipments={setEquipments}
-                            ></HomeCard>)
+                        ></HomeCard>)
                     }
                 </div>
                 <div className="w-10/12 mx-auto mt-8">
                     <Link to="/equipments"><button className="btn bg-cyan-800 hover:bg-cyan-900 text-base-100">Show All</button></Link>
+                </div>
+            </section>
+            <section className="w-10/12 mx-auto my-12">
+                <h3 className="text-3xl font-semibold text-cyan-800 text-center">Category</h3>
+                <div className="flex justify-between mt-16">
+                    {
+                        uniqueCategories.map((cat, idx) => <button 
+                        onClick={handleCategory}
+                        className="btn bg-cyan-800/80 hover:bg-cyan-900/80 text-base-100"
+                        key={idx}
+                        >
+                            {cat}
+                        </button>)
+                    }
                 </div>
             </section>
         </div>

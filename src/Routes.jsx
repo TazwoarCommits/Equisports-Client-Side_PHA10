@@ -20,12 +20,12 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/equipments")
+        loader: () => fetch("https://equisports-server-side.vercel.app/equipments")
       },
       {
         path: "/equipments",
         element: <Equipments></Equipments>,
-        loader: () => fetch("http://localhost:5000/equipments")
+        loader: () => fetch("https://equisports-server-side.vercel.app/equipments")
       },
       {
         path: "/addEquipment",
@@ -34,18 +34,19 @@ const router = createBrowserRouter([
       {
         path: "/updateProduct/:id",
         element: <Private><Update></Update></Private>,
-        loader: ({ params }) => fetch(`http://localhost:5000/equipments/${params.id}`)
+        loader: ({ params }) => fetch(`https://equisports-server-side.vercel.app/equipments/${params.id}`)
       },
       {
         path: "/myEquipments",
         element: <Private><MyEquipments></MyEquipments></Private>,
-        loader: () => fetch("http://localhost:5000/equipments")
+        loader: () => fetch("https://equisports-server-side.vercel.app/equipments")
       },
       {
         path: "/details/:id",
         element: <Private><Details></Details></Private>,
-        loader: ({ params }) => fetch(`http://localhost:5000/equipments/${params.id}`)
-      }
+        loader: ({ params }) => fetch(`https://equisports-server-side.vercel.app/equipments/${params.id}`)
+      },
+
     ]
   },
   {

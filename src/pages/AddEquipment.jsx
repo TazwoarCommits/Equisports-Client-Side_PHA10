@@ -33,7 +33,7 @@ const AddEquipment = () => {
         }
          
         console.log(equipment);
-        fetch("http://localhost:5000/equipments" ,{
+        fetch("https://equisports-server-side.vercel.app/equipments" ,{
             method : "POST" ,
             headers : {
                 "content-type" : "application/json"
@@ -59,6 +59,7 @@ const AddEquipment = () => {
     return (
         <div className="mt-5 flex flex-col justify-center items-center w-10/12 mx-auto ">
             <h2 className="text-3xl text-cyan-800 font-semibold text-center mb-12">Add new Equipment</h2>
+            <h4 className='my-8 text-xl md:text-2xl'><span className='text-cyan-900/80 font-medium'>User :</span> {user? user.displayName : user.email}</h4>
             <form onSubmit={handleSubmit} className="w-11/12">
                 <div className="md:flex space-y-4 md:space-y-0 gap-4 mb-6">
                     <label className="mb:4 input border-cyan-800/80  flex items-center gap-2 md:w-1/2">

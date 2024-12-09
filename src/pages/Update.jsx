@@ -20,7 +20,7 @@ const Update = () => {
         const description = form.get("description");
         const updatedEquipment = { name, price, category, rating, customization, processTime, availability, photo, description }
 
-        fetch(`http://localhost:5000/equipments/${_id}` ,{
+        fetch(`https://equisports-server-side.vercel.app/equipments/${_id}` ,{
             method : "PUT" ,
             headers : {
                 "content-type" : "application/json"
