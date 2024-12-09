@@ -3,18 +3,13 @@ const Footer = () => {
     return (
         <footer className="font-poppins mt-8 md:mt-16 footer place-items-center bg-blue-100 text-base-content p-10">
             <nav>
-                <h6 className="footer-title">Services</h6>
-                <a className="link link-hover">Branding</a>
-                <a className="link link-hover">Design</a>
-                <a className="link link-hover">Marketing</a>
-                <a className="link link-hover">Advertisement</a>
+                <h2 className="text-center text-cyan-800 text-2xl font-semibold">EquiSport</h2>
             </nav>
             <nav>
                 <h6 className="footer-title">Company</h6>
-                <a className="link link-hover">About us</a>
+                <a className="link link-hover">Our Goal</a>
                 <a className="link link-hover">Contact</a>
-                <a className="link link-hover">Jobs</a>
-                <a className="link link-hover">Press kit</a>
+                <a className="link link-hover">Career</a>
             </nav>
             <nav>
                 <h6 className="footer-title">Social</h6>
