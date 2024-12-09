@@ -92,7 +92,7 @@ const Home = () => {
                             <li className=""><span className="text-lg text-cyan-800/80 font-semibold">Innovative Products: </span>Stay ahead in your game with the latest, cutting-edge sports equipment designed for peak performance.</li>
                         </ul>
                     </div>
-                    <img className="rounded-2xl w-[480px] lg:w-full" src={b2} alt="" />
+                    <img className="rounded-2xl w-[480px]" src={b2} alt="" />
                 </div>
             </section>
             <section className="mt-8 md:my-24 w-full md:w-10/12 mx-auto">
