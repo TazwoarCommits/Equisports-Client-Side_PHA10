@@ -52,7 +52,7 @@ const MyEquipCard = ({ equipment, equipments, setEquipments }) => {
                 <img className="w-11/12 mx-auto rounded-2xl h-80"
                     src={photo} />
             </figure>
-            <div className="card-body">
+            <div className="card-body w-11/12">
                 <div className="h-20">
                     <h2 className="text-xl text-cyan-800 font-semibold">{name}</h2>
                 </div>

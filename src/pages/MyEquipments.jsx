@@ -19,7 +19,7 @@ const MyEquipments = () => {
                     <h2 className="mt-16 mb-[400px] text-2xl md:text-3xl text-cyan-800/80 font-semibold text-center">You haven&apos;t added anything yet</h2>
                 </div>
                  : 
-               <div className="md:w-9/12 mx-auto mt-12 md:mt-24 grid grid-cols-1 md:grid-cols-3 space-y-6">
+               <div className="md:w-10/12 mx-auto mt-12 md:mt-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 space-y-6">
                    {
                     myAddedEquipments.map( equipment => <MyEquipCard key={equipment._id}
                          equipment={equipment}

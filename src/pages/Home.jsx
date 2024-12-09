@@ -6,6 +6,7 @@ import Banner from "../components/Banner/Banner";
 import Swal from "sweetalert2";
 import b1 from "../assets/b1.jpg"
 import b2 from "../assets/b2.jpg"
+import promises from "../assets/promises.jpg"
 
 const Home = () => {
     const { loading } = useContext(AuthContext)
@@ -78,7 +79,7 @@ const Home = () => {
                     <img className="w-full h-full opacity-50 md:rounded-2xl" src={b1} alt="" />
                 </div>
                 <h3 className="my-12 text-3xl font-semibold text-cyan-800 text-center">Your Trusted Sports Partner</h3>
-                <div className="my-8 flex flex-col-reverse md:flex-row justify-between items-center gap-6">
+                <div className="my-8 flex flex-col-reverse lg:flex-row justify-between items-center gap-6">
                     <div className="p-4">
                         <h3 className="text-xl text-cyan-800/80 mb-6">Why Choose Us for Sports Equipment?</h3>
                         <ul className="space-y-2 list-disc list-inside">
@@ -91,9 +92,26 @@ const Home = () => {
                             <li className=""><span className="text-lg text-cyan-800/80 font-semibold">Innovative Products: </span>Stay ahead in your game with the latest, cutting-edge sports equipment designed for peak performance.</li>
                         </ul>
                     </div>
-                    <img className="rounded-2xl" src={b2} alt="" />
+                    <img className="rounded-2xl w-[480px] lg:w-full" src={b2} alt="" />
                 </div>
             </section>
+            <section className="mt-8 md:my-24 w-full md:w-10/12 mx-auto">
+                <h3 className="my-12 text-3xl font-semibold text-cyan-800 text-center">Our Promises</h3>
+                <div className="flex flex-col lg:flex-row justify-between gap-12">
+                    <img className="md:rounded-2xl lg:w-96" src={promises} />
+                    <div>
+                    <h3 className="ml-4 text-xl text-cyan-800/80 mb-6">No Matter what circumstances We will make sure to keep our promises to you</h3>
+                        <ul className="space-y-2 list-disc list-inside ml-4">
+                            <li><span className="text-lg text-cyan-800/80 font-semibold">Premium Quality :</span> Experience the best in sports equipment, crafted to ensure top-notch performance and durability for athletes of all levels.</li>
+                            <li><span className="text-lg text-cyan-800/80 font-semibold" >Customization :</span> Get your fully desired customization on our products that offers.</li>
+                            <li><span className="text-lg text-cyan-800/80 font-semibold" >Fast Delivery :</span> Get high-quality gear at prices that won&apos;t break the bank. We&apos;re committed to delivering exceptional value for every budget.</li>
+                            <li><span className="text-lg text-cyan-800/80 font-semibold" >Affordable Pricing :</span> Enjoy quick and reliable shipping, so you can start playing with your new equipment as soon as possible.</li>
+                            <li><span className="text-lg text-cyan-800/80 font-semibold" >24/7 Customer Support :</span> Our dedicated team is here around the clock to assist you with any questions or issues, ensuring a smooth and hassle-free experience.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <h3 className="my-12 text-3xl font-semibold text-cyan-800 text-center underline">Thanks for Visiting Us</h3>
         </div>
     );
 };
